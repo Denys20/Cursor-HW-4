@@ -12,6 +12,5 @@ public class Main {
         musicPlayer.playClassicMusic();
         musicPlayer.playRockMusic();
         context.close();
-        
     }
 }
