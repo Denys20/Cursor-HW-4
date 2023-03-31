@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="classicalMusicPlayer" class="service.ClassicalMusicPlayer">
+        <constructor-arg>
+            <list>
+                <bean class="model.Song">
+                    <constructor-arg value="Ноктюрн"/>
+                    <constructor-arg value="Микола Лисенко"/>
+                </bean>
+                <bean class="model.Song">
+                    <constructor-arg value="Реквієм"/>
+                    <constructor-arg value="Вольфганг Амадей Моцарт"/>
+                </bean>
+                <bean class="model.Song">
+                    <constructor-arg value="Аве Марія"/>
+                    <constructor-arg value="Йоганн Себастьян Бах"/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="rockMusicPlayer" class="service.RockMusicPlayer">
+        <constructor-arg>
+            <list>
+                <bean class="model.Song">
+                    <constructor-arg value="Вiдпусти"/>
+                    <constructor-arg value="Океан Ельзи"/>
+                </bean>
+                <bean class="model.Song">
+                    <constructor-arg value="Кольорова"/>
+                    <constructor-arg value="Скрябін"/>
+                </bean>
+                <bean class="model.Song">
+                    <constructor-arg value="Чорне сонце"/>
+                    <constructor-arg value="Мертвий півень"/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="musicPlayer" class="service.MusicPlayer">
+        <constructor-arg ref="classicalMusicPlayer"/>
+        <constructor-arg ref="rockMusicPlayer"/>
+    </bean>
+
+</beans>
