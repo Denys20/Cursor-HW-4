@@ -12,6 +12,6 @@ public class Main {
         MusicPlayer musicPlayer = context.getBean(MusicPlayer.class);
         musicPlayer.playClassicMusic();
         musicPlayer.playRockMusic();
-        context.close();
+        context.close();        
     }
 }
